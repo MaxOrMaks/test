@@ -1,0 +1,18 @@
+public class Picture {
+    private static String s = "*";
+    public static void main(String[] args) {
+        printSymbol();
+    }
+
+    private static void printSymbol(){
+        for(int i = 0; i < 3; i++){
+            System.out.println(s);
+            s += "*";
+        }
+
+        for (int i = 0; i <= 3; i++){
+            System.out.println(s);
+            s = s.substring(0, s.length() - 1);
+        }
+    }
+}
