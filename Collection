@@ -1,31 +1,35 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 public class Collection {
 
+
     private static ArrayList<Integer> list = new ArrayList<>();
+    private static int count = 0;
+
     public static void main(String[] args) {
         dataCreation();
-    }
 
-
-    private static int[] addNumbers(){
-        Random random = new Random();
-        int [] massive1 = new int[10];
-        for(int i = 0; i < massive1.length; i++){
-            massive1[i] = random.nextInt(11);
-            System.out.print(massive1[i] + " ");
         }
-        return massive1;
-    }
 
-    private static void filtration(int[] massive2){
-        for(int i = 0; i < massive2.length; i++){
-            if(massive2[i] % 2 != 0 || massive2[i] == 2){
-                list.add(massive2[i]);
+
+        private static void primeNumbers(){
+        for(int i = 2; i < 100; i++){
+           boolean number = true;
+            for(int a = 2; a < i; a++){
+             if(i % a == 0){
+                 number = false;
+                 break;
+             }
+
+            }
+            if(number){
+                list.add(i);
+                count++;
             }
         }
+
+
     }
 
     private static void sort(ArrayList<Integer> list1){
@@ -35,9 +39,9 @@ public class Collection {
     }
 
     private static void dataCreation(){
-        int[] massive = addNumbers();
-        System.out.println();
-        filtration(massive);
+        primeNumbers();
         sort(list);
+        System.out.println("Кількість простих чисел: " + count);
     }
 }
+
